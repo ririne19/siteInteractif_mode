@@ -1,0 +1,567 @@
+/*couleurs : 
+creme claire : #EEE5DA
+bleu foncé : #222D52
+bleu clair / turquoise : #8ABDD3
+*/
+
+/*--------style générale---------*/
+
+@font-face {
+  font-family: subjectivity;
+  src: url("/font/SubjectivitySerif/");
+}
+
+body {
+  overflow-x: hidden;
+  font-family: subjectivity;
+  background: #eee5da;
+  margin: 0px;
+}
+
+button,
+header {
+  font-family: subjectivity;
+}
+
+img:not(:last-of-type) {
+    height:5em;
+}
+
+/*--------style HEADER---------*/
+
+header {
+  background-color: #8abdd3;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-style: italic;
+  font-size: larger;
+  font-weight: bold;
+}
+
+header a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  flex-grow: 1; /* Utilise flex-grow pour un espacement équitable */
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0; /* Ajustement pour centrer correctement la navigation */
+  color: black;
+}
+
+nav ul > li {
+  float: left;
+}
+
+nav ul > li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav ul > li a:hover {
+  background-color: #222d52;
+  color: #eee5da;
+  border-radius: 1em;
+}
+
+.itemLogo img{
+    height:5em;
+}
+
+/*--------style bouton jour/nuit--------*/
+
+.styleNuit {
+  color: #eee5da;
+  background: #222d52;
+}
+
+.styleNuit li {
+  color: #eee5da;
+  background-color: #8abdd3;
+}
+
+.styleNuit p,
+.styleNuit h2,
+.styleNuit h3 {
+  color: #0056b3;
+}
+
+.styleJour {
+  color: #222d52;
+  background: #eee5da;
+}
+
+/*--------style carousel---------*/
+
+#affichage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px; /* Espacement après le carousel */
+}
+
+#affichage img {
+  height: 15em;
+}
+
+/*--------style carousel - SLIDE ---------*/
+.slide {
+  max-width: 90%;
+  margin: 20px 0; /* Espacement au-dessus et en dessous de l'image */
+}
+
+#boutonSlide {
+  display: flex;
+  justify-content: center; /* Centre les boutons */
+  background-color: #8abdd3;
+  padding: 10px 20px; /* Espacement autour des boutons */
+  border-radius: 10px;
+  margin: 20px 0; /* Ajout d'un espacement supplémentaire autour des boutons */
+}
+
+/* Style des boutons */
+#precedent,
+#pause,
+#suivant {
+  margin: 0 5px; /* Espacement entre les boutons */
+  cursor: pointer; /* Change le curseur pour indiquer la possibilité de cliquer */
+  background-color: transparent; /* Fond transparent pour les boutons */
+  border: none; /* Supprime les bordures des boutons */
+  color: white; /* Couleur du texte pour les boutons */
+}
+
+/* Ajustements pour les boutons avec images */
+#precedent img,
+#suivant img {
+  width: 20px; /* Ajustez selon la taille désirée */
+  height: auto;
+}
+
+/*--------style page INDEX---------*/
+
+/*maison*/
+h1 {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+h1::before,
+h1::after {
+  content: "";
+  flex: 1;
+  border-bottom: 2px solid #222d52; /* Couleur du trait */
+}
+
+h1::before {
+  margin-right: 10px;
+}
+
+h1::after {
+  margin-left: 10px;
+}
+
+h3 {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+h3:not(:last-of-type)::after {
+  content: "•";
+  margin-left: 10px;
+}
+
+.nomsMaison {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.maGrille li {
+  list-style-type: none;
+  text-align: left;
+  width: 100%;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  margin-left: 2em;
+}
+
+.nomsCollection,
+.nomsDefile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.nomsMaison h3,
+.nomsCollection h3,
+.nomsDefile h3 {
+  margin: 10px 0; /* Espacement vertical entre les noms */
+  text-align: center;
+}
+
+/*animation "voir plus"*/
+@keyframes txtDroite {
+  0% {
+    transform: translate(0px);
+  }
+  100% {
+    transform: translate(50px);
+  }
+}
+
+.voirPlus:hover {
+  animation-name: txtDroite;
+  animation-duration: 2s;
+  background-color: #8abdd3;
+}
+
+/*--------style FOOTER---------*/
+
+footer {
+  padding: 20px 0;
+  background-color: #222d52;
+  color: #eee5da;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Permet aux éléments de passer à la ligne sur les petits écrans */
+  gap: 20px; /* Espacement entre les éléments lorsqu'ils passent à la ligne */
+}
+
+footer .container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* Permet aux liens de passer à la ligne sur les petits écrans */
+  gap: 20px; /* Espacement entre les liens */
+}
+
+footer .container div,
+footer div {
+  margin-right: 20px;
+}
+
+footer a {
+  color: #eee5da; /* Couleur spécifique pour les liens */
+  text-decoration: none;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Transition pour l'interaction */
+}
+
+footer a:hover {
+  color: white;
+  background-color: #8abdd3;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+footer img {
+  height: 50px; /* Taille du logo */
+}
+
+footer div:last-child p {
+  margin: 0; /* Enlève la marge par défaut des paragraphes */
+  color: #eee5da;
+}
+
+/*--------style bouton HAUT---------*/
+
+#haut {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #8abdd3;
+  border: none;
+  width: 50px;
+  height: 50px; /*  width et height sont égaux pour un cercle parfait */
+  border-radius: 50%; /* Rend le bouton circulaire */
+  cursor: pointer;
+  padding: 10px;
+  display: none; /*pour pas que le bouton apparaisse au debut*/
+  align-items: center;
+  justify-content: center;
+}
+
+#haut img {
+  width: 10px; /* Ajuste la taille de l'image dans le bouton */
+}
+
+/*--------style page PHOTO---------*/
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centre les cartes dans le conteneur */
+  gap: 20px; /* Espacement entre les cartes */
+  margin-top: 20px; /* Espacement au-dessus du premier ensemble de cartes */
+}
+
+.card {
+  display: flex;
+  flex-direction: column; /* Organise les enfants (image et texte) en colonne */
+  align-items: center; /* Centre les enfants horizontalement dans la carte */
+  overflow: hidden;
+  width: 200px; /* Largeur fixe pour chaque carte */
+  background-color: #8abdd3; /* Couleur de fond de la carte */
+  border-radius: 10px;
+  box-shadow: -1rem 0 3rem #0003;
+  transition: 0.4s ease-out;
+}
+
+.card img {
+  width: 100%; /* L'image occupe toute la largeur de la carte */
+  object-fit: cover; /* S'assure que l'image couvre la zone disponible, peut découper l'image */
+}
+
+.card p {
+  text-align: center; /* Centre le texte sous l'image */
+  padding: 10px; /* Espacement autour du texte pour une meilleure lisibilité */
+}
+
+.card:not(:first-child) {
+  margin-left: -50px;
+}
+
+.card:hover {
+  transform: translateY(
+    -20px
+  ); /* Augmente la hauteur de la carte lorsqu'elle est survolee */
+  transition: 0.4s ease-out;
+}
+
+.card:hover ~ .card {
+  position: relative;
+  left: 50px;
+  transition: 0.4s ease-out;
+}
+
+/*--------style page MAISON---------*/
+
+.Maison {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto; /* Centre la div "Maison" horizontalement */
+}
+
+/*animation "txtmaisons"*/
+@keyframes txtMaison {
+  0% {
+    transform: translate(0px);
+  }
+  25% {
+    transform: translate(50px);
+  }
+  50% {
+    transform: translate(0px);
+  }
+  75% {
+    transform: translate(-50px);
+  }
+  100% {
+    transform: translate(0px);
+  }
+}
+
+.Maison h2 {
+  animation-name: txtMaison;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+.descriptionMaison,
+.createurMaison {
+  width: 80%;
+  max-width: 800px; /* Largeur maximale pour les grands écrans */
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd; /* Bordure discrète */
+}
+
+.button,
+input {
+  cursor: pointer;
+  background-color: #8abdd3;
+  color: black;
+  border: none;
+  padding: 10px 20px; /* Espacement à l'intérieur du bouton */
+  border-radius: 4px;
+  margin-bottom: 10px; /* Espacement sous le bouton */
+  transition: background-color 0.3s; /* Animation de fond */
+}
+
+.button:hover,
+input:hover {
+  background-color: #0056b3;
+}
+
+.pagePlus {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 2em;
+}
+.pagePlus a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #8abdd3;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s; /* Transition douce pour le survol */
+}
+
+.pagePlus a:hover {
+  background-color: black;
+  color: whitesmoke;
+  text-align: center;
+  animation-name: fondu;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fondu {
+  0% {
+    background-color: #212529;
+  }
+
+  25% {
+    background-color: #495057;
+  }
+
+  50% {
+    background-color: #adb5bd;
+  }
+
+  75% {
+    background-color: #f8f9fa;
+  }
+
+  100% {
+    background-color: #212529;
+  }
+}
+
+/*--------style page COLLECTION---------*/
+
+.collectionContainer {
+  margin: 20px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.collectionItem,
+.collectionDefile {
+  margin-bottom: 20px;
+}
+
+.collectionItem p,
+.collectionDefile h3 {
+  margin: 10px 0;
+}
+
+.btnCollectionPiece {
+  margin: 20px 0;
+}
+
+/*--------style page PIECE---------*/
+
+.pieceContainer {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.pieceImg img {
+  border-radius: 15px;
+  margin-right: 20px;
+  height: 150px;
+  object-fit: cover;
+  width: 150px;
+}
+
+.pieceInfo {
+  flex-grow: 1;
+}
+
+.pieceInfo p {
+  margin: 5px 0;
+}
+
+/*--------style page DEFILE---------*/
+
+.defileSection {
+  margin-bottom: 20px;
+  margin-left: 1em;
+}
+
+.defileSectionAVenir {
+  background-color: #f4f4f4; /* Couleur de fond pour la section 'à venir' */
+  padding: 10px;
+  border-radius: 8px;
+  margin: 5em;
+}
+
+.defileItem {
+  border-bottom: 1px solid #ccc; /* Séparateur entre les items */
+  padding-bottom: 10px; /* Espace au-dessous de chaque item */
+  margin-bottom: 10px; /* Espace entre les items */
+}
+
+.defileItem:last-child {
+  border-bottom: none; /* Pas de bordure pour le dernier élément */
+}
+
+/*--------style page ADMIN---------*/
+
+.adminContainer {
+  margin: 20px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.adminPhotoForm {
+  margin-top: 20px;
+}
+
+.adminContainer input {
+  display: block;
+  margin-bottom: 10px;
+  padding: 8px;
+  background-color: #8abdd3;
+  border: none;
+  color: #eee5da;
+  cursor: pointer;
+}
+
+.adminPhotoForm h3 {
+  margin-top: 2em;
+}
